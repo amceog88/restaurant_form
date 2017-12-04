@@ -8,6 +8,5 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
       t.text :description
       t.timestamps
     end
-
   end
 end
