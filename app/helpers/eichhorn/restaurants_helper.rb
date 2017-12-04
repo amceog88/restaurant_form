@@ -1,0 +1,2 @@
+module Eichhorn::RestaurantsHelper
+end
