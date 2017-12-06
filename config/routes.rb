@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root "restaurants#index"
 
   namespace :eichhorn do
+    resources :restaurants
     root "restaurants#index"
   end
+
+
 
 end
