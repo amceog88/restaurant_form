@@ -24,7 +24,7 @@ class Eichhorn::RestaurantsController < ApplicationController
 
   def update
     if @restaurant.update(restaurant_params)
-      redirect_to admin_restaurant_path(@restaurant)
+      redirect_to eichhorn_restaurant_path(@restaurant)
       flash[:notice] = "restaurant was successfully updated"
     else
       render :edit
@@ -41,7 +41,7 @@ class Eichhorn::RestaurantsController < ApplicationController
   private
 
     def restaurant_params
-      params.require(:restaurant).permit(:name, :opening_hours, :tel, :address, :description)
+      params.require(:restaurant).permit(:name, :opening_hours, :tel, :address, :description, :image)
     end
 
     def set_restaurant
