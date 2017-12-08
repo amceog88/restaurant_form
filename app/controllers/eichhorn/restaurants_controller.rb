@@ -1,7 +1,7 @@
 class Eichhorn::RestaurantsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_eichhorn
-  before_action :set_restaurant, only:[:show, :edit, :update]
+  before_action :set_restaurant, only:[:show, :edit, :update, :destroy]
 
   def index
     @restaurants = Restaurant.all
@@ -30,6 +30,12 @@ class Eichhorn::RestaurantsController < ApplicationController
       render :edit
       flash[:alert] = "restaurant was failed to update"
     end
+  end
+
+  def destroy
+    @restaurant.destroy
+    redirect_to eichhorn_restaurants_path
+    flash[:alert] = "restaurant was deleted"
   end
 
   private
