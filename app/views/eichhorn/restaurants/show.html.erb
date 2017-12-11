@@ -1,15 +1,16 @@
+<div class="container">
+    <div class="well">
+      <h1><%= @restaurant.name %></h1>
 
-<div class="well">
-  <h1><%= @restaurant.name %></h1>
+      <%= image_tag @restaurant.image, width: '200px' %><br>
+      <td>
+        Opening Hours:<%= @restaurant.opening_hours %><br>
+        Tel: <%= @restaurant.tel %><br>
+        Address: <%= @restaurant.address %><br>
+        Description:<%= @restaurant.description %><br>
+      </td>
 
-  <%= image_tag @restaurant.image, width: '200px' %><br>
-  <td>
-    Opening Hours:<%= @restaurant.opening_hours %><br>
-    Tel: <%= @restaurant.tel %><br>
-    Address: <%= @restaurant.address %><br>
-    Description:<%= @restaurant.description %><br>
-  </td>
-
-  <br>  
+      <br>  
+    </div>
+  <%= link_to 'Back to index', eichhorn_restaurants_path, class: "btn btn-primary" %>
 </div>
-<%= link_to 'Back to index', eichhorn_restaurants_path %>
