@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :eichhorn do
     resources :restaurants
+    resources :categories
     root "restaurants#index"
   end
 
