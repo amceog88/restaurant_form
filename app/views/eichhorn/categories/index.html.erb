@@ -2,11 +2,25 @@
 
   <h1>餐廳分類總表</h1>
 
-  <div>
-    <%= link_to 'Restaurant', eichhorn_restaurants_path, class: "btn btn-default" %> |
+  <div class="form-inline" >
+    <%= link_to 'Restaurant', eichhorn_restaurants_path, class: "btn btn-default" %> 
     <%= link_to 'Categories', eichhorn_categories_path, class: "btn btn-default" %>
   </div>
   
+  <br>
+
+  <div class="form-inline" >
+    <%= form_for [:eichhorn, @category] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
+      </div>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+    <% if @category.errors.any? %>
+      <%= @category.errors.full_messages.to_sentence %>
+    <% end %>
+  </div>
+
   <br>
 
   <div class="row">
