@@ -2,7 +2,12 @@
 
   <h1>餐廳後台</h1>
 
-      <br>
+    <div>
+      <%= link_to 'Restaurant', eichhorn_restaurants_path, class: "btn btn-default" %> |
+      <%= link_to 'Categories', eichhorn_categories_path, class: "btn btn-default" %>
+    </div>
+
+    <br>
       <div>
         <%= link_to 'New Restaurant', new_eichhorn_restaurant_path, class: "btn btn-primary" %>
       </div>
@@ -33,6 +38,7 @@
           <% end %>
         </tbody>
       </table>
-<%= paginate @restaurants %>
+  <%= paginate @restaurants %>
+</div>
 
 

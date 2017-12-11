@@ -18,6 +18,8 @@
 
       <%= f.label :Category, "Category" %>
       <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: "form-control"} %>
+      
+      <br>
 
       <div class="form-group">
         <%= f.label :tel, "Tel" %>
