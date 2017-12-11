@@ -1,5 +1,5 @@
-class Eichhorn::CategoriesController < ApplicationController
-  before_action :authenticate_eichhorn
+class Eichhorn::CategoriesController < Eichhorn::BaseController
+  
   before_action :set_category, only:[:update, :destroy]
 
   def index

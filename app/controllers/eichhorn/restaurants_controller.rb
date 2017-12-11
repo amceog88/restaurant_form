@@ -1,5 +1,5 @@
-class Eichhorn::RestaurantsController < ApplicationController
-  before_action :authenticate_eichhorn
+class Eichhorn::RestaurantsController < Eichhorn::BaseController
+  
   before_action :set_restaurant, only:[:show, :edit, :update, :destroy]
 
   def index
