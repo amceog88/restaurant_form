@@ -1,5 +1,4 @@
 class Eichhorn::RestaurantsController < ApplicationController
-  before_action :authenticate_user!
   before_action :authenticate_eichhorn
   before_action :set_restaurant, only:[:show, :edit, :update, :destroy]
 
