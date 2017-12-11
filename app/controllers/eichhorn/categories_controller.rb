@@ -35,6 +35,13 @@ class Eichhorn::CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:alert] = "category was successfully deleted"
+    redirect_to eichhorn_categories_path
+  end
+
   private
 
   def category_params
