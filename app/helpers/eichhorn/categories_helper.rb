@@ -1,0 +1,2 @@
+module Eichhorn::CategoriesHelper
+end
