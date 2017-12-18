@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     root "restaurants#index"
   end
 
-
+  resources :restaurants, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy ,:edit]
+  end
 
 end
