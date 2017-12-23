@@ -27,5 +27,5 @@ puts "Category created!"
 
 # Default eichhorn
 
-User.create(email: "root@example.com", password: "12345678", role: "eichhorn")
+User.create(email: "root@example.com", password: "12345678", role: "eichhorn", name: "root")
 puts "Default eichhorn created!"
