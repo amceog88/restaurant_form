@@ -44,5 +44,3 @@ namespace :dev do
       puts "now you have #{User.count} users data"
     end
   end
-
-  image: File.open(File.join(Rails.root, "/seed_img/#{rand(0…20)}.jpg”))
