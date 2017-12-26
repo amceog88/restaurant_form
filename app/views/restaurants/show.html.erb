@@ -22,6 +22,8 @@
     </div>
     <div class="col-md-8">
       <%= simple_format @restaurant.description %>
+      <hr>
+      <%= link_to 'Dashboard', dashboard_restaurant_path(@restaurant), class: "btn btn-primary" %>
     </div>
 
     <div class="clearfix"></div>
@@ -39,9 +41,9 @@
     <% @restaurant.comments.each do |comment| %>
     <div>
       <% if comment.user.name? %>
-        <h4><%= comment.user.name %></h4>
+        <h4><%= link_to comment.user.name ,user_path(comment.user) %></h4>
         <% else %>
-        <h4><%= comment.user.email.split('@').first %></h4>  
+        <h4><%= link_to comment.user.email.split('@').first ,user_path(comment.user) %></h4>  
       <% end %>    
       <p><%= simple_format comment.content %></p>
       <p class="text-muted">
