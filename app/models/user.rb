@@ -7,7 +7,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   validates_presence_of :name
-  has_many :comments
+  has_many :comments, dependent: :restrict_with_error
   has_many :restaurants , through: :comments
 
 

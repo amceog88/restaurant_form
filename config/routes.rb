@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users 
 
-  resources :restaurants, only: [:index, :show]
+  resources :restaurants, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy ,:edit]
+
+    collection do
+      get :feeds
+    end
+
+    member do
+      get :dashboard
+    end
+
+  end
+
   resources :categories , only: :show
   root "restaurants#index"
 
@@ -14,8 +26,6 @@ Rails.application.routes.draw do
     root "restaurants#index"
   end
 
-  resources :restaurants, only: [:index, :show] do
-    resources :comments, only: [:create, :destroy ,:edit]
-  end
+
 
 end
