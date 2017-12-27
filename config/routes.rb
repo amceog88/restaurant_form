@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
     member do
       get :dashboard
+      # 其他程式碼
+      post :favorite
+      post :unfavorite
     end
 
   end
