@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       # 其他程式碼
       post :favorite
       post :unfavorite
+
+      post :like
+      post :dislike
+
     end
 
   end
