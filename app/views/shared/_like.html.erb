@@ -1,5 +1,10 @@
 <% if restaurant.is_liked?(current_user) %>
-  <%= link_to 'dislike', dislike_restaurant_path(restaurant), method: :post, class: "btn btn-info" %>
+  <%= link_to dislike_restaurant_path(restaurant), method: :post do %>
+    <i class="glyphicon glyphicon-heart"></i>
+  <% end %>
+
 <% else %>
-  <%= link_to 'like', like_restaurant_path(restaurant), method: :post, class: "btn btn-primary" %>
+  <%= link_to like_restaurant_path(restaurant), method: :post do %>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+  <% end %>
 <% end %>
