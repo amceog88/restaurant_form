@@ -17,6 +17,10 @@ class User < ApplicationRecord
   has_many :liked_restaurants, through: :likes, source: :restaurant
 
 
+  has_many :followships, dependent: :destroy
+  has_many :followings, through: :followships
+
+
   def eichhorn?
     self.role == "eichhorn"
   end
