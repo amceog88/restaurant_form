@@ -25,12 +25,13 @@
           <% if user.avatar? %>
             <%= image_tag(user.avatar, class: "img-rounded") %>
           <% else %>
-            <img src="http://via.placeholder.com/128x128">
+            <%= image_tag "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX9802100.jpg",
+              class: "img-rounded" %>
           <% end %>
           <% if user.name? %>
-          <h4><%= user.name %></h4>
+            <h4><%= user.name %></h4>
           <% else %>
-          <h4><%= user.email.split('@').first %></h4>
+            <h4><%= user.email.split('@').first %></h4>
           <% end %>
         <% end %>
 
