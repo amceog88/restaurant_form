@@ -8,8 +8,7 @@
         <% else %>
         <%= user.email.split('@').first %>
       <% end %>
-      <%= link_to 'Follow', followships_path(following_id: user), method: :post %>
-      <%= link_to 'Unfollow', followship_path(user), method: :delete %>
+      <%= render partial: "shared/follow", locals: {user: user} %>
     </li>
   <% end %>
 
