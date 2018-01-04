@@ -26,9 +26,13 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
-  
+
   def following?(user)
     self.followings.include?(user)
+  end
+
+  def friend?(user)
+    self.friends.include?(user)
   end
 
   def eichhorn?
