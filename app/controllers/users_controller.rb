@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @favorited_restaurants = @user.favorited_restaurants
     @followings = @user.followings
     @followers = @user.followers 
+    @all_friends = @user.all_friends
     
   end
 
@@ -27,6 +28,11 @@ class UsersController < ApplicationController
   end
 
 
+  def friend_list
+    @user = User.find(params[:id])
+    @all_friends = @user.all_friends
+  end
+  
   private
 
   def set_user

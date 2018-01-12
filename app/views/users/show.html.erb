@@ -31,7 +31,35 @@
           <% if @user.email == current_user.email %>
             <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
           <% end %>
+          <p></p>
         </div>
+        
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">我的好友</h3>
+            </div>
+            <div class="panel-body">
+              <% @all_friends.each do |friend| %>
+                <div class="friendship">
+                  <%= link_to user_path(friend) do %>
+                    <% if friend.avatar? %>
+                      <%= image_tag(friend.avatar, height: 30, width: 30, class: "img-circle") %>
+                    <% else %>
+                      <%= image_tag "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX9802100.jpg", height: 30, width: 30, class: "img-circle" %>
+                    <% end %>
+                    <% if friend.name? %>
+                      <h5><%= friend.name %></h5>
+                    <% else %>
+                      <h5><%= friend.email.split('@').first %></h5>
+                    <% end %>                    
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
         <div class="clearfix"></div>
 
       </div>
@@ -54,10 +82,10 @@
                 <%= image_tag "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX9802100.jpg", height: 30, width: 30, class: "img-circle" %>
               <% end %>
               <% if following.name? %>
-                <%= following.name %>
-              <% else %>
-                <%= following.email.split('@').first %>
-              <% end %>
+                  <%= following.name %>
+                <% else %>
+                  <%= following.email.split('@').first %>
+                <% end %>
               <% end %>
             </li>
             <% end %>
