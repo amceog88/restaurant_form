@@ -1,6 +1,6 @@
-<h1>餐廳前台</h1>
- <div class="container">
-   <div class="row">
+
+<div class="container">
+  <div class="row">
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><%=  link_to '首頁', root_path %></li>
         <li role="presentation"><%=  link_to '最新動態', feeds_restaurants_path %></li>
@@ -12,8 +12,8 @@
 
 <br>
 
- <div class="container">
-   <div class="row">
+<div class="container">
+  <div class="row">
  
      <ul class="nav nav-pills nav-pills-center">
        <li role="presentation" class="active"><%= link_to "全部餐廳", root_path %></li>
@@ -22,7 +22,7 @@
        <% end %>
      </ul>
   
-      <br>
+    <br>
 
     <%= render partial: "shared/restaurant_list" %>
 

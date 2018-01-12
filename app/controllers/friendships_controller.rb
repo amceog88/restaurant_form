@@ -3,7 +3,7 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.build(friend_id: params[:friend_id])
 
     if @friendship.save
-      flash[:notice] = "Successfully friended"
+      flash[:notice] = "成功登入好友"
       redirect_back(fallback_location: root_path)
     else
       flash[:alert] = @friendship.errors.full_messages.to_sentence
@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship = current_user.friendships.where(friend_id: params[:id]).first
     @friendship.destroy
-    flash[:alert] = "friendship destroyed"
+    flash[:alert] = "刪除好友"
     redirect_back(fallback_location: root_path)
   end
 
